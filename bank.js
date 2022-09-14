@@ -22,10 +22,13 @@ const password = passwordField.value;
 
 // STEP-4: VERIFY EMAIL AND PASSWORD AND CHECK WETHER USER VAILD OR NOT
 if(email === 'dadababu@gmail.com' && password === 'secret'){
-    console.log('valid user')
+    // console.log('valid user')
+    window.location.href = 'bank.html';
+    // windows likhle hobe na****
 }
 else{
-    console.log('invalid user')
+    // console.log('invalid user')
+    alert('information mismatched. Try again!!')
 }
 
 })
