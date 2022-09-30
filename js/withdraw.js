@@ -22,17 +22,23 @@ document.getElementById("btn-withdraw").addEventListener("click", function(){
 const withdrawField = document.getElementById('withdraw-field');
 const newWithdrawAmountString = withdrawField.value;
 const newWithdrawAmount = parseFloat(newWithdrawAmountString);
-console.log(newWithdrawAmount)
+// console.log(newWithdrawAmount)
+
+// step-7
+withdrawField.value = "" ;
+
+
+if(isNaN(newWithdrawAmount)){
+    alert('valid number de');return;
+}
+
 
 // step-3
 const withdrawTotalElement = document.getElementById("withdraw-total");
 const previousWithdrawTotalString = withdrawTotalElement.innerText;
 const previousWithdrawTotal = parseFloat(previousWithdrawTotalString);
-console.log(previousWithdrawTotal);
+// console.log(previousWithdrawTotal);
 
-// step-4
-const currentWithdrawTotal = previousWithdrawTotal + newWithdrawAmount;
-withdrawTotalElement.innerText = currentWithdrawTotal;
 
 
 // step-5 
@@ -41,11 +47,25 @@ const previousBalanceTotalString = balanceTotalElement.innerText;
 const previousBalanceTotal = parseFloat(previousBalanceTotalString);
 // console.log(previousBalanceTotal);
 
+
+
+
+
+
+
+if(newWithdrawAmount > previousBalanceTotal){
+    alert("tor bank e ato taka nai, lovi kutakar");return;
+}
+// alert ta important. return korle r extra kaj ashbe na
+
+// step-4
+const currentWithdrawTotal = previousWithdrawTotal + newWithdrawAmount;
+withdrawTotalElement.innerText = currentWithdrawTotal;
 // step-6
 const newBalanceTotal = previousBalanceTotal - newWithdrawAmount;
 balanceTotalElement.innerText = newBalanceTotal;
 
 
-// step-7
-withdrawField.value = "" ;
+
+
 })
